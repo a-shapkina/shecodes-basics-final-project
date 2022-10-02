@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homemade Gouda Cheese</title>
+    <style>
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        background: linear-gradient(#ffe380, #ffffff);
+      }
+      .content {
+        margin: 60px 30px;
+        text-align: center;
+      }
+      h1 {
+        color: #3b3317;
+      }
+      h2 {
+        color: #232fad;
+        font-weight: 600;
+      }
+      a {
+        color: #3b3317;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      p {
+        margin: 0 0 30px;
+        line-height: 1.5;
+      }
+
+      hr {
+        border: 1px solid #ffe380;
+        margin: 30px 0 10px;
+      }
+
+      .fb {
+        font-size: 14px;
+      }
+      img {
+        display: block;
+        width: 100%;
+        max-width: 480px;
+        height: auto;
+        margin: 30px auto;
+      }
+      button {
+        display: block;
+        background-color: #232fad;
+        color: #fff;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0 auto;
+        padding: 15px 30px;
+        border: 1px solid #232fad;
+        border-radius: 30px;
+        box-shadow: 5px 5px 5px #6472fa;
+        transition: all 200ms ease-in-out;
+      }
+      button:hover {
+        color: #3b3317;
+        background-color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Gouda Cheese</h1>
+      <h2>Free Shipping When You Buy 2+</h2>
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/755/original/gouda-cheese.png?1658819859"
+        alt="Gouda Cheese"
+      />
+      <p>
+        Gouda Cheese is a Dutch cheese famous for its delicious salty taste and
+        its firm texture. Now you can order your favorite Dutch cheese online.
+        <br />Find out more about Gouda
+        <a href="https://www.cheese.com/gouda/" target="_blank "
+          ><strong><em>here</em></strong></a
+        >.
+      </p>
+      <button>BUY</button>
+      <hr />
+      <span class="fb"
+        >Contact us via
+        <a href="https://facebook.com" target="_blank"
+          ><strong><em>Facebook</em></strong></a
+        >.</span
+      >
+    </div>
+    <script>
+      function updateH1(newH1) {
+        let h1 = document.querySelector("h1");
+        h1.innerHTML = newH1;
+      }
+
+      function itemNumber(item) {
+        return item >= 2;
+      }
+
+      function buy() {
+        let name = prompt("What is your name?");
+        let item = prompt("How many heads of cheese would you like to order?");
+
+        if (itemNumber(item)) {
+          updateH1(`Congrats, ${name}! You are eligible for free shipping!`);
+        } else {
+          updateH1(
+            `Psst, ${name}! Add one more head of cheese to be eligible for FREE shipping.`
+          );
+        }
+      }
+      let buyButton = document.querySelector("button");
+      buyButton.addEventListener("click", buy);
+    </script>
+  </body>
+</html>
